@@ -1,0 +1,15 @@
+
+volumes:
+  db:
+
+services:
+  mariadb:
+    image: mariadb
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+
